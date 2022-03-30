@@ -11,6 +11,7 @@
 		239A285D27F4D9B900BFEF54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A285C27F4D9B900BFEF54 /* ContentView.swift */; };
 		239A285F27F4D9BD00BFEF54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239A285E27F4D9BD00BFEF54 /* Assets.xcassets */; };
 		239A286227F4D9BD00BFEF54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239A286127F4D9BD00BFEF54 /* Preview Assets.xcassets */; };
+		239A286C27F4DAEE00BFEF54 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A286B27F4DAEE00BFEF54 /* MapViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		239A285C27F4D9B900BFEF54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		239A285E27F4D9BD00BFEF54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		239A286127F4D9BD00BFEF54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		239A286B27F4DAEE00BFEF54 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,10 @@
 		239A285927F4D9B900BFEF54 /* VedangMapPractice */ = {
 			isa = PBXGroup;
 			children = (
+				239A286827F4DAA100BFEF54 /* Model */,
+				239A286927F4DAA700BFEF54 /* View */,
+				239A286A27F4DAAA00BFEF54 /* ViewModel */,
 				239A285A27F4D9B900BFEF54 /* VedangMapPracticeApp.swift */,
-				239A285C27F4D9B900BFEF54 /* ContentView.swift */,
 				239A285E27F4D9BD00BFEF54 /* Assets.xcassets */,
 				239A286027F4D9BD00BFEF54 /* Preview Content */,
 			);
@@ -65,6 +69,29 @@
 				239A286127F4D9BD00BFEF54 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		239A286827F4DAA100BFEF54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		239A286927F4DAA700BFEF54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				239A285C27F4D9B900BFEF54 /* ContentView.swift */,
+				239A286B27F4DAEE00BFEF54 /* MapViewRepresentable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		239A286A27F4DAAA00BFEF54 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				239A285D27F4D9B900BFEF54 /* ContentView.swift in Sources */,
+				239A286C27F4DAEE00BFEF54 /* MapViewRepresentable.swift in Sources */,
 				239A285B27F4D9B900BFEF54 /* VedangMapPracticeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
