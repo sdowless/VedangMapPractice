@@ -12,6 +12,7 @@
 		239A285F27F4D9BD00BFEF54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239A285E27F4D9BD00BFEF54 /* Assets.xcassets */; };
 		239A286227F4D9BD00BFEF54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 239A286127F4D9BD00BFEF54 /* Preview Assets.xcassets */; };
 		239A286C27F4DAEE00BFEF54 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A286B27F4DAEE00BFEF54 /* MapViewRepresentable.swift */; };
+		239A286F27F6038600BFEF54 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A286E27F6038600BFEF54 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		239A285E27F4D9BD00BFEF54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		239A286127F4D9BD00BFEF54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		239A286B27F4DAEE00BFEF54 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		239A286E27F6038600BFEF54 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		239A285927F4D9B900BFEF54 /* VedangMapPractice */ = {
 			isa = PBXGroup;
 			children = (
+				239A286D27F6037600BFEF54 /* Managers */,
 				239A286827F4DAA100BFEF54 /* Model */,
 				239A286927F4DAA700BFEF54 /* View */,
 				239A286A27F4DAAA00BFEF54 /* ViewModel */,
@@ -92,6 +95,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		239A286D27F6037600BFEF54 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				239A286E27F6038600BFEF54 /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239A286F27F6038600BFEF54 /* LocationManager.swift in Sources */,
 				239A285D27F4D9B900BFEF54 /* ContentView.swift in Sources */,
 				239A286C27F4DAEE00BFEF54 /* MapViewRepresentable.swift in Sources */,
 				239A285B27F4D9B900BFEF54 /* VedangMapPracticeApp.swift in Sources */,
@@ -300,6 +312,7 @@
 				DEVELOPMENT_TEAM = LF78THV97C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Let me see your location so i can creep on you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -329,6 +342,7 @@
 				DEVELOPMENT_TEAM = LF78THV97C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Let me see your location so i can creep on you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -19,17 +19,27 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     let mapView = MKMapView()
     let imagePicker = UIImagePickerController()
+    @StateObject var locationManager = LocationManager()
     
     func makeUIView(context: Context) -> some UIView {
         mapView.isRotateEnabled = true
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
         
+        if let coordinate = locationManager.userLocation?.coordinate {
+            
+            let region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05,
+                                                                                       longitudeDelta: 0.05))
+            
+            print("DEBUG: Did set region \(region)")
+            mapView.setRegion(region, animated: true)
+        }
+        
         return mapView
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        
+
     }
     
     func makeCoordinator() -> MapCoordinator {
@@ -44,6 +54,6 @@ extension MapViewRepresentable {
         
         init(parent: MapViewRepresentable) {
             self.parent = parent
-        } 
+        }
     }
 }

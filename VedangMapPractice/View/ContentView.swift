@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct ContentView: View {
+struct ContentView: View {    
     var body: some View {
         MapViewRepresentable()
             .ignoresSafeArea()
