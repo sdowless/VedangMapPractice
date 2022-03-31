@@ -18,6 +18,8 @@ class LocationManager: NSObject, ObservableObject {
 //        manager.startUpdatingLocation()
         
         manager.requestWhenInUseAuthorization()
+        
+        self.userLocation = manager.location
     }
 }
 
