@@ -18,7 +18,8 @@ The UIViewRepresentable protocol allows us to transform a UIKit view into a Swif
 struct MapViewRepresentable: UIViewRepresentable {
     
     let mapView = MKMapView()
-    @StateObject var locationManager = LocationManager()
+    @StateObject var locationManager = LocationManager.shared
+    @StateObject var viewModel = MapViewModel()
     
     func makeUIView(context: Context) -> some UIView {
         mapView.isRotateEnabled = true
