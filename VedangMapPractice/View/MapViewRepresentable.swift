@@ -15,6 +15,8 @@ The UIViewRepresentable protocol allows us to transform a UIKit view into a Swif
  
 */
 
+// Comment to see if git pull is working
+
 struct MapViewRepresentable: UIViewRepresentable {
     
     let mapView = MKMapView()
