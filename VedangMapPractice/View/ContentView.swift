@@ -8,10 +8,27 @@
 import SwiftUI
 import MapKit
 
-struct ContentView: View {    
+struct ContentView: View {
+    @StateObject var viewModel = MapViewModel()
+    
     var body: some View {
-        MapViewRepresentable()
+        VStack {
+            MapViewRepresentable(viewModel: viewModel)
+                .ignoresSafeArea()
+            
+            VStack {
+                List(viewModel.locations) { location in
+                    Button {
+                        // generate polyline and display on map here..
+                        viewModel.selectLocation(location: location)
+                    } label: {
+                        Text(location.addressString)
+                    }
+                }
+                .listStyle(PlainListStyle())
+            }
             .ignoresSafeArea()
+        }
     }
 }
 

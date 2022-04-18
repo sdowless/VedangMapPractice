@@ -14,6 +14,7 @@
 		239A286C27F4DAEE00BFEF54 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A286B27F4DAEE00BFEF54 /* MapViewRepresentable.swift */; };
 		239A286F27F6038600BFEF54 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239A286E27F6038600BFEF54 /* LocationManager.swift */; };
 		23D39AE127FCA9EC0069BB38 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D39AE027FCA9EC0069BB38 /* MapViewModel.swift */; };
+		23D39AE32809C75B0069BB38 /* LocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D39AE22809C75B0069BB38 /* LocationDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		239A286B27F4DAEE00BFEF54 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		239A286E27F6038600BFEF54 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		23D39AE027FCA9EC0069BB38 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		23D39AE22809C75B0069BB38 /* LocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		239A286827F4DAA100BFEF54 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23D39AE22809C75B0069BB38 /* LocationDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23D39AE32809C75B0069BB38 /* LocationDataModel.swift in Sources */,
 				239A286F27F6038600BFEF54 /* LocationManager.swift in Sources */,
 				23D39AE127FCA9EC0069BB38 /* MapViewModel.swift in Sources */,
 				239A285D27F4D9B900BFEF54 /* ContentView.swift in Sources */,

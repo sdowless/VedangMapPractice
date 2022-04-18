@@ -19,7 +19,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     let mapView = MKMapView()
     @StateObject var locationManager = LocationManager.shared
-    @StateObject var viewModel = MapViewModel()
+    @StateObject var viewModel: MapViewModel
     
     func makeUIView(context: Context) -> some UIView {
         mapView.isRotateEnabled = true
@@ -75,12 +75,14 @@ extension MapViewRepresentable {
         }
         
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-            if let anno = annotation as? MKPointAnnotation {
-                let view = MKAnnotationView(annotation: anno, reuseIdentifier: "anno")
-                return view
-            }
+            guard annotation is MKPointAnnotation else { return nil }
             
-            return nil
+            let identifier = "anno"
+            let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            
+            annotationView?.annotation = annotation
+            
+            return annotationView
         }
         
         // MARK: - Helpers
@@ -109,9 +111,17 @@ extension MapViewRepresentable {
                 
                 print("DEBUG: Directions response is \(response)")
                 
+                if self.parent.mapView.overlays.count > 0 {
+                    self.parent.mapView.removeOverlays(self.parent.mapView.overlays)
+                }
+                
                 guard let polyline = response?.routes.first?.polyline else { return }
                 print("DEBUG: Polyline is \(polyline)")
                 self.parent.mapView.addOverlay(polyline)
+                
+                if self.parent.mapView.annotations.count > 0 {
+                    self.parent.mapView.removeAnnotations(self.parent.mapView.annotations)
+                }
                 
                 let anno = MKPointAnnotation()
                 anno.coordinate = destinationPlacemark.coordinate

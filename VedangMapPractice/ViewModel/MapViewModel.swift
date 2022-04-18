@@ -18,9 +18,11 @@ class MapViewModel: ObservableObject {
     var userLocation = LocationManager.shared.userLocation
     @Published var destinationPlacemark: MKPlacemark?
     
+    @Published var locations = [LocationDataModel]()
+        
     var addresses: [String] = [
-        "1976 Bascom Ave, Campbell, CA"
-//        "1696 Tully Rd, San Jose, CA"
+        "1976 Bascom Ave, Campbell, CA",
+        "1696 Tully Rd, San Jose, CA"
     ]
     
     var locationDistanceDict = [String: Double]()
@@ -31,6 +33,12 @@ class MapViewModel: ObservableObject {
         }
     }
     
+    func selectLocation(location: LocationDataModel) {
+        print("DEBUG: Selected location coordinates are \(location.coordinate)")
+        let placemark = MKPlacemark(coordinate: location.coordinate)
+        self.destinationPlacemark = placemark
+    }
+        
     func calculateRouteDistance(toAddress address: String) {
         let geocoder = CLGeocoder()
         guard let userLocation = userLocation else {
@@ -40,7 +48,7 @@ class MapViewModel: ObservableObject {
         geocoder.geocodeAddressString(address) { placemarks, error in
             guard let endPlacemark = placemarks?.first else { return }
             guard let coordinate = endPlacemark.location?.coordinate else { return }
-            self.destinationPlacemark = MKPlacemark(coordinate: coordinate)
+//            self.destinationPlacemark = MKPlacemark(coordinate: coordinate)
             
             let start = MKMapItem(placemark: MKPlacemark(coordinate: userLocation.coordinate))
             let end = MKMapItem(placemark: MKPlacemark(coordinate: endPlacemark.location!.coordinate))
@@ -59,6 +67,15 @@ class MapViewModel: ObservableObject {
 //                    print("DEBUG: Distance between points is \(route.distance)")
                     
                     self.locationDistanceDict[address] = route.distance
+                    
+                    let locationModel = LocationDataModel(addressString: address,
+                                                          distanceFromUser: route.distance,
+                                                          coordinate: coordinate)
+                    
+                    self.locations.append(locationModel)
+                    self.locations.sort(by: { $0.distanceFromUser < $1.distanceFromUser })
+                    
+                    print("DEBUG: Distance in miles is \(route.distance / 1609.344)")
                     
 //                    print("DEBUG: Location distances \(self.locationDistanceDict)")
 
